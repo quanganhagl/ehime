@@ -1,0 +1,99 @@
+.c-secbtn {
+  background-color: $teal;
+  box-shadow: 4px 4px $black;
+
+  height: 60px;
+  max-width: 450px;
+  position: relative;
+
+  margin: 70px auto 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  @include sp {
+    height: 38px;
+    margin-top: 117px;
+    box-shadow: 2px 2px $black;
+    width: calc(100% - 20px);
+    max-width: 270px;
+  }
+
+  &--news {
+    margin-top: 47px;
+    @include sp {
+      margin-top: 36px;
+    }
+  }
+
+  &--overview {
+    background-color: $white;
+    box-shadow: none;
+    margin-top: calc(25.6% - 70px);
+
+    &:hover {
+      transform: none !important;
+      border: 2px solid #00a99d;
+
+      transition: border 0s;
+
+      .c-secbtn__icon--overview {
+        transform: translateX(2px);
+      }
+    }
+    @include fr1200down {
+      margin-top: 20px;
+    }
+    @include tab {
+      margin-top: 25px;
+      order: 4;
+    }
+  }
+
+  &--feedback {
+    margin-top: 48px;
+  }
+
+  &:hover {
+    transform: translate(4px, 4px);
+    opacity: 1;
+    box-shadow: none;
+
+    .c-secbtn__icon {
+      opacity: 1;
+    }
+  }
+
+  .c-secbtn__text {
+    font-weight: 700;
+    color: $white;
+    letter-spacing: -0.7px;
+    @include sp {
+      font-size: 1.3rem;
+    }
+
+    &--overview {
+      color: $teal;
+      @include sp {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .c-secbtn__icon {
+    position: absolute;
+    right: 20px;
+
+    @include sp {
+      right: 34px;
+      width: 15px;
+    }
+
+    &--overview {
+      content: url(../../assets/img/arrow--green.svg);
+    }
+  }
+}

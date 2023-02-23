@@ -1,0 +1,47 @@
+<section class="c-mainvisual">
+    <!-- slick start -->
+    <div class="c-mainvisual__background">
+        <div class="c-mainvisual__slick">
+            <% slides.forEach(slide=>{ %>
+                <div class="c-mainvisual__slickitem">
+                    <picture>
+                        <source media="(max-width: 767px)"
+                            srcset="./assets/img/mainvisual/slide<%= slide.id %>_sp@2x.jpg">
+                        <img class="c-mainvisual__slickimg" src="./assets/img/mainvisual/slide<%= slide.id %>.jpg"
+                            alt=" 未来の先輩から生の声が届きました。">
+                    </picture>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+    <!-- slick end -->
+
+    <!-- Home mainvisual start -->
+    <div id="home" class="c-mainvisual__content c-mainvisual__content--home">
+        <div class="c-mainvisual__info l-container l-container--1160px ">
+            <h1 class="c-mainvisual__img">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="./assets/img/mainvisual/text_background_sp.png">
+                    <img src="./assets/img/mainvisual/text_background.png" alt="未来の先輩から生の声が届きました。">
+                </picture>
+            </h1>
+            <span class="c-mainvisual__text"> 2020年卒学生向けの企業紹介サイト </span>
+        </div>
+    </div>
+    <!-- Home mainvisual end -->
+
+    <!-- Not-home mainvisual start-->
+    <% pages.forEach(page=> { %>
+        <div id="<%= page.id %>" class="c-mainvisual__content c-mainvisual__content--nothome">
+            <div class="c-mainvisual__info l-container l-container--1160px ">
+                <h1 class="c-mainvisual__heading">
+                    <%= page.heading %>
+                </h1>
+                <span class="c-mainvisual__subheading">
+                    <%= page.subheading %>
+                </span>
+            </div>
+        </div>
+        <% }) %>
+            <!-- Not-home mainvisual end-->
+</section>

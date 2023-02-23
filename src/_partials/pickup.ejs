@@ -1,0 +1,40 @@
+<section class="c-pickup">
+    <!-- section heading start -->
+    <div class="c-pickup__headingwrapper">
+        <h2 class="c-sechead c-sechead--pickup u-palt l-container l-container--1160px">
+            <span class="c-sechead__eng">Pick Up</span>
+            新着ピックアップ
+        </h2>
+    </div>
+    <!-- section heading end -->
+
+    <!-- slider start-->
+    <div class="c-pickup__slider">
+        <% pickups.forEach(pickup=> { %>
+            <div class="c-pickup__item">
+                <a href="#" class="c-pickup__link">
+                    <div class="c-pickup__imgwrapper">
+                        <picture>
+                            <source media="(max-width: 767px)"
+                                srcset="./assets/img/pickup/slick_<%= pickup.num %>--sp.jpg">
+                            <img class="c-pickup__img" src="./assets/img/pickup/slick_<%= pickup.num %>.jpg"
+                                alt="<%- pickup.title %>">
+                        </picture>
+                        <% if (pickup.text !=="" ) { %>
+                            <span class="c-pickup__text"><%- pickup.text %></span>
+                            <% } %>
+                    </div>
+                    <div class="c-pickup__content">
+                        <h3 class="c-pickup__contenttitle">
+                            <%- pickup.title %>
+                        </h3>
+                        <p class="c-pickup__mess">
+                            <%- pickup.message %>
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <% }); %>
+                <!-- slider end-->
+    </div>
+</section>

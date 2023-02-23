@@ -1,0 +1,12 @@
+<div class="c-breadcrumb ">
+    <div class="c-breadcrumb__contentwrapper l-container l-container--1160px">
+        <a class="c-breadcrumb__home" href="./">ホーム</a>
+
+        <% pages.forEach(page=> { %>
+            <span class="c-breadcrumb__currentpage c-breadcrumb__<%= page.id %>">
+                <%= page.subheading %>
+            </span>
+
+            <% }); %>
+    </div>
+</div>
